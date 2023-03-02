@@ -1,0 +1,1397 @@
+@import url("https://fonts.googleapis.com/css?family=PT+Sans+Narrow");
+@import url("https://fonts.googleapis.com/css?family=M+PLUS+1p:400,500,700,800,900");
+html, body, div, span, a, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block
+}
+
+body {
+  line-height: 1
+}
+
+ul, ol {
+  list-style: none
+}
+
+blockquote, q {
+  quotes: none
+}
+
+blockquote::before, blockquote::after, q::before, q::after {
+  content: ''
+}
+
+del {
+  text-decoration: line-through
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 0;
+  padding: 0
+}
+
+img {
+  vertical-align: bottom
+}
+
+input, select {
+  vertical-align: middle
+}
+
+input:focus, textarea:focus {
+  outline: 0
+}
+
+input[type='search']::-webkit-search-decoration, input[type='search']::-webkit-search-cancel-button, input[type='search']::-webkit-search-results-button, input[type='search']::-webkit-search-results-decoration {
+  display: none
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none
+}
+
+@font-face {
+  font-family: reitam;
+  src: url("../webfonts/Reitam Regular.otf") format("opentype")
+}
+
+@font-face {
+  font-family: NotoSans Regular;
+  src: url("../webfonts/NotoSans-Regular.ttf") format("truetype")
+}
+
+@font-face {
+  font-family: NotoSans Bold;
+  src: url("../webfonts/NotoSans-Bold.ttf") format("truetype")
+}
+
+@font-face {
+  font-family: NotoSans SemiBpld;
+  src: url("../webfonts/NotoSans-SemiBold.ttf") format("truetype")
+}
+
+@font-face {
+  font-family: NotoSans Medium;
+  src: url("../webfonts/NotoSans-Medium.ttf") format("truetype")
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box
+}
+
+html {
+  font-family: "reitam", 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-size: 12px;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0
+}
+
+body {
+  background-color: #ecece7
+}
+
+h1 {
+  font-size: 36px
+}
+
+h2 {
+  font-size: 30px
+}
+
+h3 {
+  font-size: 23px
+}
+
+h4 {
+  font-size: 17px
+}
+
+h5 {
+  font-size: 14px
+}
+
+h6 {
+  font-size: 12px
+}
+
+a {
+  color: #c51162;
+  text-decoration: none;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease
+}
+
+a:hover {
+  color: #ff4081;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: .7
+}
+
+@media screen and (max-width: 768px) {
+  .pc {
+    display: none !important
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .sp {
+    display: none !important
+  }
+}
+
+.loader {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  position: relative
+}
+
+.loader_dot, .loader_dot:before, .loader_dot:after {
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation: load7 1.4s infinite ease-in-out;
+  animation: load7 1.4s infinite ease-in-out
+}
+
+.loader_dot {
+  color: #a28d69;
+  font-size: 10px;
+  margin: -2em auto 0;
+  position: absolute;
+  text-indent: -9999em;
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+  top: 50vh;
+  left: 50vw;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: 9999
+}
+
+.loader_dot::before, .loader_dot::after {
+  content: '';
+  position: absolute;
+  top: 0
+}
+
+.loader_dot::before {
+  left: -4.5em;
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s
+}
+
+.loader_dot::after {
+  left: 4.5em
+}
+
+.fadein {
+  opacity: 0;
+  -webkit-transform: translate(0, 1.4vw);
+  -ms-transform: translate(0, 1.4vw);
+  transform: translate(0, 1.4vw);
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s
+}
+
+.fadein.scrollin {
+  opacity: 1;
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0)
+}
+
+@-webkit-keyframes load7 {
+  0%, 80%, 100% {
+    -webkit-box-shadow: 0 2em 0 -1.3em;
+    box-shadow: 0 2em 0 -1.3em
+  }
+  40% {
+    -webkit-box-shadow: 0 2em 0 0;
+    box-shadow: 0 2em 0 0
+  }
+}
+
+@keyframes load7 {
+  0%, 80%, 100% {
+    -webkit-box-shadow: 0 2em 0 -1.3em;
+    box-shadow: 0 2em 0 -1.3em
+  }
+  40% {
+    -webkit-box-shadow: 0 2em 0 0;
+    box-shadow: 0 2em 0 0
+  }
+}
+
+.header {
+  width: 100vw;
+  height: auto;
+  padding: 2.9vw 0 0 2.5vw;
+  position: fixed;
+  top: 0;
+  z-index: 100
+}
+
+.header_inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex
+}
+
+.header_inner_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  right: 5.5vw;
+  line-height: 4.5vw
+}
+
+.header_inner_listItem {
+  margin-left: 2.75vw
+}
+
+.header_inner_listItem a {
+  font-size: 1.4vw;
+  color: #a28d69;
+  letter-spacing: .1em
+}
+
+.header_logo img {
+  width: 4.5vw;
+  height: 4.5vw
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 4vw 5vw 0
+  }
+  .header_inner_listItem {
+    margin-left: 5.3vw
+  }
+  .header_inner_listItem a {
+    font-size: 2.8vw;
+    line-height: 10.5vw
+  }
+  .header_logo img {
+    width: 10.5vw;
+    height: 10.5vw
+  }
+}
+
+.footer {
+  width: 100vw;
+  height: 20vw;
+  display: block;
+  background-color: #191919;
+  position: relative
+}
+
+.footer_inner {
+  height: 100%
+}
+
+.footer_inner_copy {
+  color: #e5e5de;
+  font-size: 1.3vw;
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: bold;
+  letter-spacing: .5em;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%)
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    height: 53vw
+  }
+  .footer_inner_copy {
+    width: 100vw;
+    text-align: center;
+    font-size: 2.7vw
+  }
+}
+
+.wrapper--top {
+  background-image: url("/images/bg_illust.png");;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 35%
+}
+
+.wrapper--top .header_inner_listItem--works a {
+  opacity: .7
+}
+
+.wrapper--top .mainVisual {
+  width: 100vw;
+  height: 100vh
+}
+
+.wrapper--top .mainVisual_inner {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  white-space: nowrap
+}
+
+.wrapper--top .mainVisual_logo, .wrapper--top .mainVisual_sentence {
+  text-align: center
+}
+
+.wrapper--top .mainVisual_logo {
+  letter-spacing: .2em;
+  font-size: 2.25vw
+}
+
+.wrapper--top .mainVisual_sentence img {
+  margin-top: 1.5vw;
+  height: 1.1vw
+}
+
+.wrapper--top .main_works_list {
+  width: 81.25vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 5vw auto 7.5vw
+}
+
+.wrapper--top .main_works_listItem {
+  display: block;
+  padding-bottom: 7.5vw
+}
+
+.wrapper--top .main_works_listItem_eyecatch {
+  width: 39vw
+}
+
+.wrapper--top .main_works_title {
+  font-family: 'NotoSans SemiBold', sans-serif;
+  font-size: 1.3vw;
+  letter-spacing: .05em;
+  color: #a28d69
+}
+
+.wrapper--top .main_works_category {
+  color: #000;
+  font-size: 1vw;
+  padding-top: 1vw;
+  letter-spacing: .05em
+}
+
+.wrapper--top .main_works_listItem_textblock {
+  padding: 1.4vw 0 0 1em
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper--top {
+    background: none
+  }
+  .wrapper--top .mainVisual_inner {
+    -webkit-transform: translate(-50%, -120%);
+    -ms-transform: translate(-50%, -120%);
+    transform: translate(-50%, -120%)
+  }
+  .wrapper--top .mainVisual_logo {
+    font-size: 6.4vw
+  }
+  .wrapper--top .mainVisual_sentence img {
+    width: 75vw;
+    height: inherit;
+    margin-top: 6.5vw
+  }
+  .wrapper--top .mainVisual_bg {
+    width: 62vw;
+    position: fixed;
+    left: 50%;
+    -webkit-transform: translate(-50%, -75%);
+    -ms-transform: translate(-50%, -75%);
+    transform: translate(-50%, -75%);
+    z-index: -1
+  }
+  .wrapper--top .main_works_list {
+    width: 90vw;
+    margin-bottom: 13vw
+  }
+  .wrapper--top .main_works_listItem {
+    padding-bottom: 13vw
+  }
+  .wrapper--top .main_works_listItem_eyecatch {
+    width: 100%
+  }
+  .wrapper--top .main_works_listItem_textblock {
+    margin-top: 4vw;
+    padding-left: 2.7vw
+  }
+  .wrapper--top .main_works_title {
+    font-size: 3.2vw
+  }
+  .wrapper--top .main_works_category {
+    font-size: 2.3vw;
+    padding-top: 3.3vw
+  }
+}
+
+.wrapper--about {
+  background-image: url("/images/bg_about_kv.png");;
+  background-attachment: fixed;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute
+}
+
+.wrapper--about .header_inner_listItem--about a {
+  opacity: .7
+}
+
+.wrapper--about .content {
+  margin-top: 100vh;
+  padding: 11vw 0 0;
+  background-color: #ecece7;
+  clear: both
+}
+
+.wrapper--about .content_inner {
+  width: 72vw;
+  margin: 0 auto
+}
+
+.wrapper--about .content .profile {
+  width: 72vw;
+  padding-bottom: 7.5vw;
+  border-bottom: 1px solid #1f1f1f
+}
+
+.wrapper--about .content .profile_ruby {
+  font-size: 1.5vw;
+  font-weight: bold;
+  letter-spacing: .1em
+}
+
+.wrapper--about .content .profile_name {
+  font-size: 4vw;
+  letter-spacing: .1em;
+  margin: 1vw 0 7.5vw;
+  position: relative
+}
+
+.wrapper--about .content .profile_name_position {
+  font-size: 1.1vw;
+  letter-spacing: .1em;
+  vertical-align: middle;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  line-height: 4vw;
+  border-left: 1px solid #9c9c9b;
+  color: #9c9c9b;
+  font-weight: normal;
+  padding-left: 2.5vw
+}
+
+.wrapper--about .content .profile_sentence {
+  font-size: 1.1vw;
+  font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  line-height: 2.2em;
+  text-align: justify;
+  letter-spacing: .075em
+}
+
+.wrapper--about .content .contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  padding: 7.5vw 0 15vw
+}
+
+.wrapper--about .content .contact_snsList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex
+}
+
+.wrapper--about .content .contact_snsListItem {
+  position: relative;
+  margin-left: 2vw
+}
+
+.wrapper--about .content .contact_snsListItem a img {
+  height: 1.5vw;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%)
+}
+
+.wrapper--about .content .contact_snsListItem_button {
+  width: 18vw;
+  line-height: 5vw;
+  display: block;
+  color: #ecece7;
+  font-size: 1.1vw;
+  background-color: #a28d69;
+  letter-spacing: .1em;
+  margin-left: 3.5vw;
+  text-align: center
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper--about {
+    background: none
+  }
+  .wrapper--about .bg_about {
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    z-index: -1
+  }
+  .wrapper--about .content {
+    margin: 98vw auto 0;
+    width: 100vw;
+    padding-top: 14vw
+  }
+  .wrapper--about .content_inner {
+    width: 79vw
+  }
+  .wrapper--about .content .profile {
+    width: 100%;
+    padding-bottom: 18.7vw
+  }
+  .wrapper--about .content .profile_ruby {
+    font-size: 2.4vw
+  }
+  .wrapper--about .content .profile_name {
+    font-size: 6.4vw;
+    letter-spacing: .05em;
+    margin: 1.5vw 0 14.5vw
+  }
+  .wrapper--about .content .profile_name_position {
+    font-size: 2.4vw;
+    line-height: 2.5em;
+    padding-left: 4vw
+  }
+  .wrapper--about .content .profile_sentence {
+    font-size: 2.9vw;
+    letter-spacing: .1em;
+    line-height: 2.5em
+  }
+  .wrapper--about .content .contact {
+    display: inherit;
+    padding: 14.5vw 0 27vw
+  }
+  .wrapper--about .content .contact_snsList {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-bottom: 18.5vw
+  }
+  .wrapper--about .content .contact_snsListItem {
+    margin: 0 3.3vw
+  }
+  .wrapper--about .content .contact_snsListItem a img {
+    height: 5.6vw
+  }
+  .wrapper--about .content .contact_snsListItem_button {
+    width: 100%;
+    line-height: 18.5vw;
+    margin-left: 0;
+    font-size: 3.2vw;
+    font-weight: bold
+  }
+}
+
+.wrapper_works {
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: absolute
+}
+
+.wrapper_works .header_inner_listItem--works a {
+  opacity: .7
+}
+
+.wrapper_works .content {
+  margin-top: calc(100vw / 1.78);
+  padding: 11vw 0 0;
+  background-color: #ecece7;
+  clear: both
+}
+
+.wrapper_works .content_inner {
+  width: 72vw;
+  margin: 0 auto
+}
+
+.wrapper_works .content .works {
+  width: 72vw;
+  border-bottom: 1px solid #1f1f1f
+}
+
+.wrapper_works .content .works_ruby {
+  font-size: 1.5vw;
+  font-weight: bold;
+  letter-spacing: .1em
+}
+
+.wrapper_works .content .works_name {
+  font-size: 4vw;
+  letter-spacing: .1em;
+  margin: 1vw 0 7.5vw;
+  position: relative
+}
+
+.wrapper_works .content .works_name--insight {
+  letter-spacing: .03em;
+}
+
+.wrapper_works .content .works_name--koguma {
+  letter-spacing: 0;
+}
+
+.wrapper_works .content .works_name--txp {
+  letter-spacing: .05em;
+}
+
+.wrapper_works .content .works_name_subtitle {
+  font-size: 2.5vw;
+  line-height: 4vw;
+  margin-left: .75em;
+  vertical-align: middle;
+  letter-spacing: .1em
+}
+
+.wrapper_works .content .works_name_position {
+  font-size: 1.1vw;
+  letter-spacing: .1em;
+  vertical-align: middle;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  line-height: 4vw;
+  border-left: 1px solid #9c9c9b;
+  color: #9c9c9b;
+  font-weight: normal;
+  padding-left: 2.5vw
+}
+
+.wrapper_works .content .works_name_position--2row {
+  line-height: 2vw;
+  text-align: right
+}
+
+.wrapper_works .content .works_sentence {
+  font-size: 1.1vw;
+  font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  line-height: 2.2em;
+  text-align: justify;
+  letter-spacing: .075em;
+  margin-bottom: 8.8vw
+}
+
+.wrapper_works .content .works_photoList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-bottom: 2vw
+}
+
+.wrapper_works .content .works_photoListItem {
+  display: block;
+  width: 47.5%;
+  margin-bottom: 5%
+}
+
+.wrapper_works .content .works_photoListItem img {
+  width: 100%;
+  height: auto
+}
+
+.wrapper_works .content .works_photoListItem--full {
+  width: 100%
+}
+
+.wrapper_works .content .works_photoListItem--full img {
+  width: 100%
+}
+
+.wrapper_works .content .works_photoListItem--grid3 {
+  width: 30%
+}
+
+.wrapper_works .content .works_photoListItem--grid3 img {
+  width: 100%
+}
+
+.wrapper_works .content .works_photoListItem--last {
+  margin-bottom: 12%
+}
+
+.wrapper_works .content .works_photoListText_title {
+  margin: 2.8vw 0 3.9vw;
+  font-size: 1.9vw
+}
+
+.wrapper_works .content .works_photoListText_sentence {
+  font-size: 1.1vw;
+  font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  line-height: 2.2em;
+  text-align: justify;
+  letter-spacing: .075em;
+  margin-bottom: 2.5vw
+}
+
+.wrapper_works .content .information {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  padding: 7.5vw 0 10vw
+}
+
+.wrapper_works .content .information_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  letter-spacing: .15em;
+  font-size: .8vw;
+  font-weight: bold;
+  font-family: inherit
+}
+
+.wrapper_works .content .information_content_website, .wrapper_works .content .information_content_position {
+  width: 50%
+}
+
+.wrapper_works .content .information_content_websiteName {
+  margin-bottom: 1.5em
+}
+
+.wrapper_works .content .information_content_websiteLink {
+  text-decoration: underline;
+  color: #a28d69
+}
+
+.wrapper_works .content .information_content_position {
+  text-align: right
+}
+
+.wrapper_works .content .information_content_positionName {
+  margin-bottom: 1.5em
+}
+
+.wrapper_works .content .toTop {
+  display: block;
+  width: 100vw;
+  height: 5.5vw;
+  background: #a28d69;
+  position: relative
+}
+
+.wrapper_works .content .toTop::before {
+  content: '';
+  background: #fff;
+  width: 1.3vw;
+  height: 1px;
+  position: absolute;
+  top: 37.5%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%)
+}
+
+.wrapper_works .content .toTop::after {
+  content: '';
+  display: block;
+  width: .95vw;
+  height: .95vw;
+  border-top: solid 1px #fff;
+  border-right: solid 1px #fff;
+  position: absolute;
+  top: 62.5%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+  -ms-transform: translate(-50%, -50%) rotate(-45deg);
+  transform: translate(-50%, -50%) rotate(-45deg)
+}
+
+.wrapper_works--s660 {
+  background-image: url("/images/works/s660/bg_s660.png");
+}
+
+.wrapper_works--orbis {
+  background-image: url("/images/works/orbis/bg_orbis.png");
+}
+
+.wrapper_works--infl {
+  background-image: url("/images/works/infl/bg_infl.png");
+}
+
+.wrapper_works--color {
+  background-image: url("/images/works/color/bg_color.png");
+}
+
+.wrapper_works--intern {
+  background-image: url("/images/works/intern/bg_intern.png");
+}
+
+.wrapper_works--clean {
+  background-image: url("/images/works/clean/bg_clean.png");
+}
+
+.wrapper_works--internaward {
+  background-image: url("/images/works/internaward/bg_internaward.png");
+}
+
+.wrapper_works--koguma {
+  background-image: url("/images/works/koguma/bg_koguma.png");
+}
+
+.wrapper_works--koguma .works_name_subtitle--koguma {
+  font-family: 'M PLUS 1p', sans-serif;
+  font-weight: 800;
+  letter-spacing: 0
+}
+
+.wrapper_works--kaizen {
+  background-image: url("/images/works/kaizen/bg_kaizen.png");
+}
+
+.wrapper_works--otona {
+  background-image: url("/images/works/otona/bg_otona.png");
+}
+
+.wrapper_works--fuminners {
+  background-image: url("/images/works/fuminners/bg_fuminners.png");
+}
+
+.wrapper_works--nazotoki {
+  background-image: url("/images/works/nazotoki/bg_nazotoki.png");
+}
+
+.wrapper_works--insight {
+  background-image: url("/images/works/insight/bg_insight.png");
+}
+
+.wrapper_works--soelu {
+  background-image: url("/images/works/soelu/bg_soelu.png");
+}
+
+.wrapper_works--ore {
+  background-image: url("/images/works/ore/bg_ore.png");
+}
+
+.wrapper_works--kuchiki {
+  background-image: url("/images/works/kuchiki/bg_kuchiki.png");
+}
+
+.wrapper_works--saeri {
+  background-image: url("/images/works/saeri/bg_saeri.png");
+}
+
+.wrapper_works--segawa {
+  background-image: url("/images/works/segawa/bg_segawa.png");
+}
+
+.wrapper_works--teppen {
+  background-image: url("/images/works/teppen/bg_teppen.png");
+}
+
+.wrapper_works--molts {
+  background-image: url("/images/works/molts/bg_molts.png");
+}
+
+.wrapper_works--eimifukada {
+  background-image: url("/images/works/eimifukada/bg_eimifukada.png");
+}
+
+.wrapper_works--fukutake {
+  background-image: url("/images/works/fukutake/bg_fukutake.png");
+}
+
+.wrapper_works--tabian {
+  background-image: url("/images/works/tabian/bg_tabian.png");
+}
+
+.wrapper_works--tabian .content .information_content_websiteLink {
+  opacity: .5;
+  text-decoration: none;
+}
+
+.wrapper_works--cuebic {
+  background-image: url("/images/works/cuebic/bg_cuebic.png");
+}
+
+.wrapper_works--newhere {
+  background-image: url("/images/works/newhere/bg_newhere.png");
+}
+
+.wrapper_works--aidama {
+  background-image: url("/images/works/aidama/bg_aidama.png");
+}
+
+.wrapper_works--realation {
+  background-image: url("/images/works/realation/bg_realation.png");
+}
+
+.wrapper_works--rayfield {
+  background-image: url("/images/works/rayfield/bg_rayfield.png");
+}
+
+.wrapper_works--miraie {
+  background-image: url("/images/works/miraie/bg_miraie.png");
+}
+
+.wrapper_works--acafootballpartners {
+  background-image: url("/images/works/acafootballpartners/bg_acafootballpartners.png");
+}
+
+.wrapper_works--will {
+  background-image: url("/images/works/will/bg_will.png");
+}
+
+.wrapper_works--wan55 {
+  background-image: url("/images/works/wan55/bg_wan55.png");
+}
+
+.wrapper_works--tatsumura {
+  background-image: url("/images/works/tatsumura/bg_tatsumura.png");
+}
+
+.wrapper_works--kiinnox {
+  background-image: url("/images/works/kiinnox/bg_kiinnox.png");
+}
+
+.wrapper_works--japaninaction {
+  background-image: url("/images/works/japaninaction/bg_japaninaction.png");
+}
+
+.wrapper_works--japantimesagency {
+  background-image: url("/images/works/japantimesagency/bg_japantimesagency.png");
+}
+
+.wrapper_works--txpmedical {
+  background-image: url("/images/works/txpmedical/bg_txpmedical.png");
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper_works {
+    padding-top: 33vw;
+    background-position: center 33vw
+  }
+  .wrapper_works .content {
+    padding-top: 18.7vw
+  }
+  .wrapper_works .content_inner {
+    width: 100vw
+  }
+  .wrapper_works .content_inner .works {
+    width: 79vw;
+    margin: 0 auto
+  }
+  .wrapper_works .content_inner .works_ruby {
+    font-size: 2.4vw
+  }
+  .wrapper_works .content_inner .works_name {
+    font-size: 6.4vw;
+    letter-spacing: .05em;
+    margin: 1.5vw 0 14.5vw
+  }
+  .wrapper_works .content_inner .works_name_subtitle {
+    font-size: 4.5vw;
+    letter-spacing: .05em
+  }
+  .wrapper_works .content_inner .works_name_subtitle--koguma {
+    letter-spacing: 0
+  }
+  .wrapper_works .content_inner .works_sentence {
+    font-size: 2.9vw;
+    letter-spacing: .1em;
+    line-height: 2.5em;
+    margin-bottom: 18vw
+  }
+  .wrapper_works .content_inner .works_photoList {
+    margin-bottom: 13vw
+  }
+  .wrapper_works .content_inner .works_photoListItem {
+    margin-bottom: 2.7vw;
+    width: calc(50% - 1.35vw)
+  }
+  .wrapper_works .content_inner .works_photoListItem--full {
+    width: 100%
+  }
+  .wrapper_works .content_inner .works_photoListItem--grid3 {
+    width: 30.75%
+  }
+  .wrapper_works .content_inner .works_photoListText_title {
+    font-size: 5vw;
+    margin: 10vw 0 6vw;
+    line-height: 1.5em
+  }
+  .wrapper_works .content_inner .works_photoListText_sentence {
+    font-size: 2.9vw;
+    letter-spacing: .1em;
+    line-height: 2.5em
+  }
+  .wrapper_works .content_inner .information {
+    display: block;
+    width: 79vw;
+    margin: 0 auto;
+    padding: 13.3vw 0 40vw;
+    position: relative
+  }
+  .wrapper_works .content_inner .information_content {
+    display: block;
+    font-size: 2.4vw;
+    letter-spacing: .05em
+  }
+  .wrapper_works .content_inner .information_content_website, .wrapper_works .content_inner .information_content_position {
+    width: 100%;
+    text-align: left
+  }
+  .wrapper_works .content_inner .information_content_websiteName, .wrapper_works .content_inner .information_content_positionName {
+    margin-bottom: 1.2em
+  }
+  .wrapper_works .content_inner .information_content_website {
+    position: absolute;
+    bottom: 24vw
+  }
+  .wrapper_works .content .toTop {
+    height: 18.7vw;
+    opacity: inherit
+  }
+  .wrapper_works .content .toTop::before {
+    width: 5.3vw;
+    height: 1px;
+    position: absolute;
+    top: 37.5%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%)
+  }
+  .wrapper_works .content .toTop::after {
+    content: '';
+    display: block;
+    width: 3.3vw;
+    height: 3.3vw;
+    border-top: solid 1px #fff;
+    border-right: solid 1px #fff;
+    position: absolute;
+    top: 62.5%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+    -ms-transform: translate(-50%, -50%) rotate(-45deg);
+    transform: translate(-50%, -50%) rotate(-45deg)
+  }
+}
+
+.wrapper_contact {
+  background-image: url("/images/contact/bg_contact.png");;
+  background-attachment: fixed;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: absolute
+}
+
+.wrapper_contact--thanks {
+  background-image: url("/images/contact/bg_contact_thanks.png");
+}
+
+.wrapper_contact .header_logo img {
+  background: #f6f6f6;
+  border-radius: 50%
+}
+
+.wrapper_contact .header_inner_listItem--contact a {
+  opacity: .7
+}
+
+.wrapper_contact .content {
+  margin-top: calc(100vw / 1.78);
+  padding: 9.375vw 0 0;
+  background-color: #ecece7;
+  clear: both
+}
+
+.wrapper_contact .content_inner {
+  width: 72vw;
+  margin: 0 auto
+}
+
+.wrapper_contact .content .contact {
+  width: 72vw;
+  padding-bottom: 15vw
+}
+
+.wrapper_contact .content .contact_ruby {
+  font-size: 1.5vw;
+  font-weight: bold;
+  letter-spacing: .1em
+}
+
+.wrapper_contact .content .contact_name {
+  font-size: 4vw;
+  letter-spacing: .1em;
+  margin: 1vw 0 7.5vw;
+  position: relative
+}
+
+.wrapper_contact .content .contact_sentence {
+  font-size: 1.1vw;
+  font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  line-height: 2.2em;
+  text-align: justify;
+  letter-spacing: .075em;
+  margin-bottom: 9.375vw
+}
+
+.wrapper_contact .content .contact_form_block {
+  margin-bottom: 4.25vw
+}
+
+.wrapper_contact .content .contact_form_block label {
+  display: block;
+  margin-bottom: 1vw;
+  font-size: 1.3vw;
+  letter-spacing: .1em
+}
+
+.wrapper_contact .content .contact_form_input {
+  display: block;
+  width: 100%;
+  height: 7.5vw;
+  border: none;
+  padding: 3em;
+  font-size: 1.1vw
+}
+
+.wrapper_contact .content .contact_form_input--message {
+  height: 22.5vw
+}
+
+.wrapper_contact .content .contact_form_button {
+  width: 18vw;
+  height: 5vw;
+  line-height: 5vw;
+  display: block;
+  color: #ecece7;
+  font-size: 1.1vw;
+  background-color: #a28d69;
+  letter-spacing: .1em;
+  margin: 7.5vw auto 0;
+  text-align: center;
+  -webkit-transition: .3s all ease;
+  -o-transition: .3s all ease;
+  transition: .3s all ease
+}
+
+.wrapper_contact .content .contact_form_button:hover, .wrapper_contact .content .contact_form_button:disabled {
+  opacity: .7
+}
+
+.wrapper_contact .content .contact_form_button:disabled {
+  cursor: default
+}
+
+.wrapper_contact .content .contact_form_err {
+  font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  text-align: justify;
+  font-weight: bold;
+  color: #FA5858;
+  position: absolute;
+  font-size: .75vw;
+  letter-spacing: .15em;
+  line-height: 1;
+  margin-top: 1vw;
+  padding-left: .5em
+}
+
+.wrapper_contact .content .information {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  padding: 7.5vw 0 10vw
+}
+
+.wrapper_contact .content .information_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  letter-spacing: .15em;
+  font-size: .8vw;
+  font-weight: bold;
+  font-family: inherit
+}
+
+.wrapper_contact .content .information_content_website, .wrapper_contact .content .information_content_position {
+  width: 50%
+}
+
+.wrapper_contact .content .information_content_websiteName {
+  margin-bottom: 1.5em
+}
+
+.wrapper_contact .content .information_content_websiteLink {
+  text-decoration: underline;
+  color: #a28d69
+}
+
+.wrapper_contact .content .information_content_position {
+  text-align: right
+}
+
+.wrapper_contact .content .information_content_positionName {
+  margin-bottom: 1.5em
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper_contact {
+    background: none
+  }
+  .wrapper_contact .content {
+    margin: 98vw auto 0;
+    width: 100vw;
+    padding-top: 14vw
+  }
+  .wrapper_contact .content_inner {
+    width: 79vw
+  }
+  .wrapper_contact .content .contact {
+    width: 100%;
+    padding-bottom: 27vw
+  }
+  .wrapper_contact .content .contact_ruby {
+    font-size: 2.4vw
+  }
+  .wrapper_contact .content .contact_name {
+    font-size: 6.4vw;
+    letter-spacing: .05em;
+    margin: 1.5vw 0 14.5vw
+  }
+  .wrapper_contact .content .contact_name_position {
+    font-size: 2.4vw;
+    line-height: 2.5em;
+    padding-left: 4vw
+  }
+  .wrapper_contact .content .contact_sentence {
+    font-size: 2.9vw;
+    letter-spacing: .1em;
+    line-height: 2.5em;
+    margin-bottom: 15vw
+  }
+  .wrapper_contact .content .contact_form_block {
+    margin-bottom: 9.3vw
+  }
+  .wrapper_contact .content .contact_form_block label {
+    font-size: 3.5vw;
+    margin-bottom: 4vw
+  }
+  .wrapper_contact .content .contact_form_input {
+    width: 125%;
+    height: 14.7vw;
+    font-size: 16px;
+    -webkit-transform: scale(0.8) translateX(-12%);
+    -ms-transform: scale(0.8) translateX(-12%);
+    transform: scale(0.8) translateX(-12%);
+    padding: 2.5em 2em
+  }
+  .wrapper_contact .content .contact_form_input--message {
+    height: 40vw
+  }
+  .wrapper_contact .content .contact_form_button {
+    width: 100%;
+    height: 18.5vw;
+    line-height: 18.5vw;
+    margin: 18.7vw auto 0;
+    font-size: 3.2vw;
+    font-weight: bold
+  }
+  .wrapper_contact .content .contact_form_button:disabled {
+    opacity: .7
+  }
+  .wrapper_contact .content .contact_form_err {
+    font-size: 2.5vw;
+    margin-top: .5vw;
+    padding-left: .5em
+  }
+  .bg_contact {
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    z-index: -1
+  }
+}
